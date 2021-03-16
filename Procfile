@@ -1,1 +1,1 @@
-web: gunicorn school_app:school_app
+web: gunicorn school_app.wsgi
