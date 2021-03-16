@@ -25,6 +25,10 @@ class Student(models.Model):
   date_of_birth         = models.DateField(default=timezone.now)
   current_class         = models.ForeignKey(StudentClass, on_delete=models.SET_NULL, blank=True, null=True)
   date_of_admission     = models.DateField(default=timezone.now)
+  level                 = models.CharField(max_length=100)
+  dept                  = models.CharField(max_length=300)
+  fees                  = models.CharField(max_length=300)
+
 
   mobile_num_regex      = RegexValidator(regex="^[0-9]{10,15}$", message="Entered mobile number isn't in a right format!")
   parent_mobile_number  = models.CharField(validators=[mobile_num_regex], max_length=13, blank=True)

@@ -36,6 +36,8 @@
             <h4>{{ object.firstname }} </h4>
             <h4>{{ object.other_name }} </h4>
             <h4>{{ object.registration_number }} </h4>
+            <h4>{{object.level}}</h4>
+            <h4>{{object.dept}}</h4>
           </div>
         </div>
         <h5>{{ object.current_class }} </h5>
@@ -76,6 +78,22 @@
             </label>
             <div class="col">
               {{ object.others }}
+            </div>
+          </div>
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Dept
+            </label>
+            <div class="col">
+              {{ object.dept }}
+            </div>
+          </div>
+          <div class="form-group border-bottom row">
+            <label class="col">
+              Level
+            </label>
+            <div class="col">
+              {{ object.level }}
             </div>
           </div>
 

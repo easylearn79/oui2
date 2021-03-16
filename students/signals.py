@@ -23,6 +23,8 @@ def create_bulk_student(sender, created, instance, *args, **kwargs):
         ) if 'gender' in row and row['gender'] else ''
         phone = row['parent_number'] if 'parent_number' in row and row['parent_number'] else ''
         address = row['address'] if 'address' in row and row['address'] else ''
+        level = row['level'] if 'level' in row and row['level'] else ''
+        dept = row['dept'] if 'dept' in row and row['dept'] else ''
         current_class = row['current_class'] if 'current_class' in row and row['current_class'] else ''
         if current_class:
           theclass, kind = StudentClass.objects.get_or_create(name=current_class)
@@ -39,6 +41,8 @@ def create_bulk_student(sender, created, instance, *args, **kwargs):
                 current_class=theclass,
                 parent_mobile_number=phone,
                 address=address,
+                level=level,
+                dept=dept,
                 current_status='active'
             )
           )

@@ -57,6 +57,8 @@ class StudentUpdateView(LoginRequiredMixin, SuccessMessageMixin, UpdateView):
                                                                     'type': 'date'})
         form.fields['address'].widget = widgets.Textarea(attrs={'rows': 2})
         form.fields['others'].widget = widgets.Textarea(attrs={'rows': 2})
+        form.fields['dept'].widget = widgets.Textarea(attrs={'rows': 2})
+        
        # form.fields['passport'].widget = widgets.FileInput()
         return form
 
@@ -80,6 +82,6 @@ def downloadcsv(request):
 
     writer = csv.writer(response)
     writer.writerow(['registration_number', 'surname',
-                     'firstname', 'other_names', 'gender', 'parent_number', 'address', 'current_class'])
+                     'firstname', 'other_names', 'gender', 'parent_number', 'address', 'current_class','level','dept'])
 
     return response
